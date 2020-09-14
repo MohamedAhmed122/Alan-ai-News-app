@@ -11,7 +11,7 @@ const infoCards = [
     { color: '#283593', title: 'News by Sources', info: 'CNN, Wired, BBC News, Time, IGN, Buzzfeed, ABC News...', text: 'Give me the news from CNN' },
   ];
 
-const NewsCard = ({ newsArticles }) => {
+const NewsCard = ({ newsArticles, activeArticle }) => {
     const classes = useStyles();
     if (!newsArticles.length) {
         return (
@@ -36,7 +36,7 @@ const NewsCard = ({ newsArticles }) => {
             {newsArticles.map((article, i) => (
             <Grid item xs={12} sm={6} md={4} lg={3} style={{ display: "flex" }}>
                 <Container>
-                    <CardItems article={article} i={i} />
+                    <CardItems activeArticle={activeArticle} article={article} i={i} />
                 </Container>
             </Grid>
             ))}
